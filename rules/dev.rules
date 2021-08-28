@@ -1,0 +1,61 @@
+
+// rule "Switch"  
+//     when
+//         Item sw_setValue changed
+//     then 
+//         if (FF_LivingRoom_Light.state == OFF){
+//             FF_LivingRoom_Light.sendCommand(ON)
+//         } else {
+//             FF_LivingRoom_Light.sendCommand(OFF)
+//         }
+// end
+
+
+// rule "testttttttttt"
+
+// when
+
+//     Item in_51_button changed 
+//     or
+//     Item out_51_button changed
+//     or 
+//     Item tnl_51_Timer_Enable changed
+
+// then
+
+//     logInfo("Tunnel 51 testtttt button rule", "in_51_button or out_51_button button pressed")
+//     tnl_51_Timer_Current_Value.postUpdate(110)
+//     if (in_51_tnl_light.state == OFF){
+//     // in_51_tnl_light.sendCommand(ON)
+//     // out_51_tnl_light.sendCommand(ON)
+//         g51_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]
+//         Thread::sleep(300)
+//     // in_51_btn_light.sendCommand(ON)
+//     // out_51_btn_light.sendCommand(ON)
+//         g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]
+//     }else{
+//         g51_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]
+//     //  in_51_tnl_light.sendCommand(OFF)
+//     // out_51_tnl_light.sendCommand(OFF)
+//         Thread::sleep(300)
+//         g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]
+//     //  in_51_btn_light.sendCommand(OFF)
+//     // out_51_btn_light.sendCommand(OFF)
+//     }
+
+    // HVAC_UF_Room_ACTUATORS_1.members.forEach[actuator|
+                    
+    //   // actuator.sendCommand("1")
+    //   actuator.sendCommand(ON)
+    //   Thread::sleep(500)
+    //   logInfo("HVAC_LIVING_ROOM_ACTUATOR", "LIVING ROOM UF ACTUATOR "+ iterator.toString +" SET TO ON")
+    //   iterator ++
+    // ]
+    //     iterator = 1 // reset the iterator to 1
+    //     HVAC_Heating_OnOff_Visualizer_1.sendCommand(ON)
+
+// createTimer(now.plusMinutes(15), [|
+//     LoungeBlind.sendCommand(UP)
+//   ])
+
+end

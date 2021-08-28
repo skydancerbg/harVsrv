@@ -1,0 +1,50 @@
+Group gTunnelItems
+
+Group gCurrentTnlTimers
+
+Switch oneMinuteTriggerSwitch   //Using this as a rule trigger for the other rules, in order not to do heavy operations in a chron job.
+                                // By default, there are only 2 threads allocated to Quartz, the scheduler. 
+                                // All cron rules, Timers, and Astro triggered rules all use this…
+Number default_tnl_timer_value
+Number default_tnl_timer_missed_actinon_value
+Number default_tnl_timer_extendedDryingTime_value
+
+// // Tunnel tnl_51  // // 
+// // // // // // // // //
+Group gtnl_51_btn_ctrl (gTunnelItems)
+
+Switch tnl_51_btnctrl_enable        (gtnl_51_btn_ctrl)                   
+Switch tnl_51_btnaction_enable      (gtnl_51_btn_ctrl)                
+Switch tnl_51_missed_action_countdown_enable_sw    (gtnl_51_btn_ctrl) // In case restarting after power out   
+Switch tnl_51_setCurrentTimer_sw    (gtnl_51_btn_ctrl) // In case restarting after power out   
+Switch tnl_51_set_all_to_defaults_sw    (gtnl_51_btn_ctrl) // In case restarting after power out   
+
+Number tnl_51_timer_default_value               (gtnl_51_btn_ctrl, gPersist_On_Every_Change)                              
+Number tnl_51_timer_missed_actinon_value        (gtnl_51_btn_ctrl, gPersist_On_Every_Change)               
+Number tnl_51_timer_extendedDryingTime_value    (gtnl_51_btn_ctrl, gPersist_On_Every_Change)                
+Number tnl_51_current_timer_value               (gtnl_51_btn_ctrl, gCurrentTnlTimers, gPersist_On_Every_Change)                        
+
+
+// Switch tnl_51_Current_Timer_Puse
+// Number tnl_51_Current_Delayed_Action_Timer_val (gPersist_On_Every_Change)   
+// Switch tnl_51_Set_Current_Delayed_Action_Timer_sw  
+
+
+
+
+// Number tnl_Timer_Global_Default_Value (gPersist_On_Every_Change)
+// Number tnl_Timer_Default_Value (gPersist_On_Every_Change)
+// Switch tnl_Timer_Set_Default_Value_switch
+// Number tnl_Timer_Default_Action_Delay_Value (gPersist_On_Every_Change)
+// Switch tnl_Timer_Set_Default_Action_Delay_Value_switch
+
+// Group  g_tnl_51_Status_Display    "Тунел 51 Система Бутони:"  
+// Number tnl_51_Timer_Setpoint (gTunnelTimerSetpoints, gPersist_On_Change)  
+// Number tnl_51_Timer_Current_Value (gTunnelTimerCurrentValues)
+// Switch tnl_51_Timer_Enable (gTunnelTimerEnable)
+
+
+// Group  g_tnl_51_Status_Display    "Тунел 51 Система Бутони:"  
+// Number tnl_51_Timer_Setpoint (gTunnelTimerSetpoints, gPersist_On_Change)  
+// Number tnl_51_Timer_Current_Value (gTunnelTimerCurrentValues)
+// Switch tnl_51_Timer_Enable (gTunnelTimerEnable)

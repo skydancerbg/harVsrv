@@ -1,0 +1,152 @@
+ rule "Every minute trigger"
+when
+  Time cron "0 * * ? * *"
+then
+  if (oneMinuteTriggerSwitch.state == ON) {
+    oneMinuteTriggerSwitch.sendCommand(OFF)
+  }
+  else
+  {
+    oneMinuteTriggerSwitch.sendCommand(ON)
+  }
+end
+
+
+rule "Decrement active tunnel timers every minute"
+when
+    Item oneMinuteTriggerSwitch changed 
+then
+logInfo("Rule: Decrement timers", "gCurrentTnlTimers DECREMENT!!!")
+
+    if(tnl_51_btnctrl_enable.state == ON) {
+        tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
+
+        if(tnl_51_missed_action_countdown_enable_sw.state == ON){
+        tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
+        }
+
+        if(tnl_51_current_timer_value.state as DecimalType == 0 ){   // If tunnel timer expired
+            tnl_51_btnaction_enable.sendCommand(ON) // Enable button press
+            tnl_51_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
+            g51_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
+            g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
+logInfo("Rule: Decrement timers", "tnl_51 Timer expired !!!")
+        }
+    }
+end
+
+
+rule "Button out_51 OUT is prerssed"
+when
+    Item out_51_button changed
+then
+    logInfo("Button pressed", "Button out_51 pressed!")
+    if(tnl_51_btnctrl_enable.state == ON && tnl_51_btnaction_enable.state == ON){
+        tnl_51_btnaction_enable.sendCommand(OFF) // disable Button press
+        nl_51_missed_action_countdown_enable_sw.sendCommand(OFF)
+        tnl_51_timer_missed_actinon_value.postUpdate((default_tnl_timer_missed_actinon_value.state as DecimalType) - 1)
+        g51_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+        tnl_51_current_timer_value.postUpdate(tnl_51_timer_extendedDryingTime_value.state as DecimalType) // Set the tunnel timer to the vaue for extended time
+}
+end
+
+rule "Button in_51 prerssed"
+when
+    Item in_51_button changed
+then
+    logInfo("Button pressed", "Button in_51 pressed!")
+    if(tnl_51_btnctrl_enable.state == ON && tnl_51_btnaction_enable.state == ON){
+        tnl_51_btnaction_enable.sendCommand(OFF) // disable Button press
+        tnl_51_missed_action_countdown_enable_sw.sendCommand(OFF)
+        tnl_51_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Set the tunnel timer to default value
+        tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType) // Set the tunnel timer to the vaue for extended time
+        g51_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+}
+end
+
+rule "tnl_51_btnctrl_enable changed"
+when
+    Item tnl_51_btnctrl_enable changed 
+then
+    if(tnl_51_btnctrl_enable.state == ON){
+        // tnl_51_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Will NOT SET to default value - in case of power shutdown!!!!
+        tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)
+        
+        tnl_51_btnaction_enable.sendCommand(OFF) // disable Button press
+        nl_51_missed_action_countdown_enable_sw.sendCommand(OFF)
+
+        g51_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides        
+    }
+end
+
+rule "tnl_51_set_all_to_defaults_sw changed"
+when
+    Item tnl_51_set_all_to_defaults_sw changed 
+then
+    if(tnl_51_btnctrl_enable.state == ON){
+        tnl_51_btnaction_enable.sendCommand(OFF) // disable Button press
+        nl_51_missed_action_countdown_enable_sw.sendCommand(OFF)
+        g51_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides       
+        tnl_51_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Set the tunnel timer to default value
+        tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)   
+    }
+end
+    
+
+
+
+
+
+
+
+
+
+// https://community.openhab.org/t/design-pattern-working-with-groups-in-rules/20512
+
+// rule "If Timer tunnel 51 at value 0"
+// when
+//     Item oneMinuteTriggerSwitch changed 
+// then
+//     // logInfo("Rule: Decrement timers", "gCurrentTnlTimers DECREMENT!!!")
+//         gCurrentTnlTimers.allMembers.forEach [ item | item.postUpdate((item.state as DecimalType) + 1) ]
+// end
+
+// https://community.openhab.org/t/find-group-containing-an-item-where-the-group-is-nested/51953
+
+// rule "Tunnel timer received update"
+// when
+// 	Member of gTunnelItems received update
+// then
+// logInfo("Rules", "Updated item name = (" + triggeringItem.name + ")."  )
+// 	// gRoom.members.forEach[roomGroup|
+// 	//  	if (roomGroup instanceof GroupItem)
+// 	//  	{
+// 	//  		roomGroup.members.forEach[roomMember|
+// 	//  			if (roomMember.name == triggeringItem.name)
+// 	//  			{
+// 	//  				logInfo("Rules", "NG: Triggering item was (" + triggeringItem.name + "), in room group (" + roomGroup.name + ")")
+// 	//  			}
+// 	// 		]
+// 	//  	}]
+// end
+
+// rule "Tunnel 51 timer received update"
+// when
+// 	Member of gtnl_51_btn_ctrl received update
+// then
+// logInfo("Rules", "Updated item name = (" + triggeringItem.name + ")."  )
+// 	// gRoom.members.forEach[roomGroup|
+// 	//  	if (roomGroup instanceof GroupItem)
+// 	//  	{
+// 	//  		roomGroup.members.forEach[roomMember|
+// 	//  			if (roomMember.name == triggeringItem.name)
+// 	//  			{
+// 	//  				logInfo("Rules", "NG: Triggering item was (" + triggeringItem.name + "), in room group (" + roomGroup.name + ")")
+// 	//  			}
+// 	// 		]
+// 	//  	}]
+// end
