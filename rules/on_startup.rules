@@ -46,7 +46,7 @@ then
     // gTunnelTimerSetpoints.allMembers.forEach [ item | item.postUpdate(tnl_Timers_Default_Value.state as DecimalType) ] // not working...???
     // tnl_Timers_Set_Default_Setpoint_sw.sendCommand(OFF)
     // tnl_Timers_Set_Default_Setpoint_sw.postUpdate(ON)
-    oneMinuteTriggerSwitch..sendCommand(OFF)
+    oneMinuteTriggerSwitch.sendCommand(OFF)
     gTnlLights.allMembers.forEach [ item | item.sendCommand(OFF) ]
     gBtnLights.allMembers.forEach [ item | item.sendCommand(OFF) ]
     logInfo("delayedOnStartup", "Delayed OnStartUp Init Items rule executed")        // rule logic

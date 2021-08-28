@@ -1,4 +1,53 @@
 
+
+
+
+
+// https://community.openhab.org/t/design-pattern-working-with-groups-in-rules/20512
+
+// rule "If Timer tunnel 51 at value 0"
+// when
+//     Item oneMinuteTriggerSwitch changed 
+// then
+//     // logInfo("Rule: Decrement timers", "gCurrentTnlTimers DECREMENT!!!")
+//         gCurrentTnlTimers.allMembers.forEach [ item | item.postUpdate((item.state as DecimalType) + 1) ]
+// end
+
+// https://community.openhab.org/t/find-group-containing-an-item-where-the-group-is-nested/51953
+
+// rule "Tunnel timer received update"
+// when
+// 	Member of gTunnelItems received update
+// then
+// logInfo("Rules", "Updated item name = (" + triggeringItem.name + ")."  )
+// 	// gRoom.members.forEach[roomGroup|
+// 	//  	if (roomGroup instanceof GroupItem)
+// 	//  	{
+// 	//  		roomGroup.members.forEach[roomMember|
+// 	//  			if (roomMember.name == triggeringItem.name)
+// 	//  			{
+// 	//  				logInfo("Rules", "NG: Triggering item was (" + triggeringItem.name + "), in room group (" + roomGroup.name + ")")
+// 	//  			}
+// 	// 		]
+// 	//  	}]
+// end
+
+// rule "Tunnel 51 timer received update"
+// when
+// 	Member of gtnl_51_btn_ctrl received update
+// then
+// logInfo("Rules", "Updated item name = (" + triggeringItem.name + ")."  )
+// 	// gRoom.members.forEach[roomGroup|
+// 	//  	if (roomGroup instanceof GroupItem)
+// 	//  	{
+// 	//  		roomGroup.members.forEach[roomMember|
+// 	//  			if (roomMember.name == triggeringItem.name)
+// 	//  			{
+// 	//  				logInfo("Rules", "NG: Triggering item was (" + triggeringItem.name + "), in room group (" + roomGroup.name + ")")
+// 	//  			}
+// 	// 		]
+// 	//  	}]
+// end
 // rule "Switch"  
 //     when
 //         Item sw_setValue changed

@@ -228,17 +228,17 @@ Bridge mqtt:broker:localMQTTbroker "localMQTTbroker" [ host="127.0.0.1", port=18
     }
 
 //      TEST TUNNEL IN     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // Thing topic in_51 "IN 51" @ "tunnel_in" {
-    // Channels:
-    //     Type switch : button        "Button"                [ stateTopic="stat/in_51/POWER3", commandTopic="cmnd/in_51/POWER3" ]
-    //     Type switch : power1        "Power1"                [ stateTopic="stat/in_51/POWER1", commandTopic="cmnd/in_51/POWER1" ]
-    //     Type switch : power2        "Power2"                [ stateTopic="stat/in_51/POWER2", commandTopic="cmnd/in_51/POWER2" ]        
-    //     Type number : temperature   "Temperature"           [ stateTopic="tele/in_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Temperature" ]
-    //     Type number : humidity      "Humidity"              [ stateTopic="tele/in_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Humidity" ]        
-    //     Type string : reachable     "Reachable"             [ stateTopic="tele/in_51/LWT" ]
-    //     Type number : rssi          "WiFi Signal Strength"  [ stateTopic="tele/in_51/STATE",  transformationPattern="JSONPATH:$.Wifi.RSSI"]
-    //     // Type number : dewpoint      "Dew point"             [ stateTopic="tele/in_2/SENSOR", transformationPattern="JSONPATH:$.SHT3X.DewPoint" ]        
-    // }
+    Thing topic in_51 "IN 51" @ "tunnel_in" {
+    Channels:
+        Type switch : button        "Button"                [ stateTopic="stat/in_51/POWER3", commandTopic="cmnd/in_51/POWER3" ]
+        Type switch : power1        "Power1"                [ stateTopic="stat/in_51/POWER1", commandTopic="cmnd/in_51/POWER1" ]
+        Type switch : power2        "Power2"                [ stateTopic="stat/in_51/POWER2", commandTopic="cmnd/in_51/POWER2" ]        
+        Type number : temperature   "Temperature"           [ stateTopic="tele/in_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Temperature" ]
+        Type number : humidity      "Humidity"              [ stateTopic="tele/in_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Humidity" ]        
+        Type string : reachable     "Reachable"             [ stateTopic="tele/in_51/LWT" ]
+        Type number : rssi          "WiFi Signal Strength"  [ stateTopic="tele/in_51/STATE",  transformationPattern="JSONPATH:$.Wifi.RSSI"]
+        // Type number : dewpoint      "Dew point"             [ stateTopic="tele/in_2/SENSOR", transformationPattern="JSONPATH:$.SHT3X.DewPoint" ]        
+    }
 // //      TEST TUNNEL IN     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -469,17 +469,17 @@ Bridge mqtt:broker:localMQTTbroker "localMQTTbroker" [ host="127.0.0.1", port=18
     }
 
 // //      TEST TUNNEL OUT     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//     Thing topic out_51 "out 51" @ "tunnel_in" {
-//     Channels:
-//         Type switch : button        "Button"                [ stateTopic="stat/out_51/POWER3", commandTopic="cmnd/out_51/POWER3" ]
-//         Type switch : power1        "Power1"                [ stateTopic="stat/out_51/POWER1", commandTopic="cmnd/out_51/POWER1" ]
-//         Type switch : power2        "Power2"                [ stateTopic="stat/out_51/POWER2", commandTopic="cmnd/out_51/POWER2" ]        
-//         Type number : temperature   "Temperature"           [ stateTopic="tele/out_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Temperature" ]
-//         Type number : humidity      "Humidity"              [ stateTopic="tele/out_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Humidity" ]        
-//         Type string : reachable     "Reachable"             [ stateTopic="tele/out_51/LWT" ]
-//         Type number : rssi          "WiFi Signal Strength"  [ stateTopic="tele/out_51/STATE",  transformationPattern="JSONPATH:$.Wifi.RSSI"]
-//         // Type number : dewpoint      "Dew point"             [ stateTopic="tele/in_2/SENSOR", transformationPattern="JSONPATH:$.SHT3X.DewPoint" ]        
-//     }
+    Thing topic out_51 "out 51" @ "tunnel_in" {
+    Channels:
+        Type switch : button        "Button"                [ stateTopic="stat/out_51/POWER3", commandTopic="cmnd/out_51/POWER3" ]
+        Type switch : power1        "Power1"                [ stateTopic="stat/out_51/POWER1", commandTopic="cmnd/out_51/POWER1" ]
+        Type switch : power2        "Power2"                [ stateTopic="stat/out_51/POWER2", commandTopic="cmnd/out_51/POWER2" ]        
+        Type number : temperature   "Temperature"           [ stateTopic="tele/out_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Temperature" ]
+        Type number : humidity      "Humidity"              [ stateTopic="tele/out_51/SENSOR", transformationPattern="JSONPATH:$.SHT20.Humidity" ]        
+        Type string : reachable     "Reachable"             [ stateTopic="tele/out_51/LWT" ]
+        Type number : rssi          "WiFi Signal Strength"  [ stateTopic="tele/out_51/STATE",  transformationPattern="JSONPATH:$.Wifi.RSSI"]
+        // Type number : dewpoint      "Dew point"             [ stateTopic="tele/in_2/SENSOR", transformationPattern="JSONPATH:$.SHT3X.DewPoint" ]        
+    }
 // //      TEST TUNNEL OUT     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 }
