@@ -1,22 +1,22 @@
 Group gTunnelItems
-
 Group gCurrentTnlTimers
+Group gEnableTunnelsw
 
 Switch oneMinuteTriggerSwitch   //Using this as a rule trigger for the other rules, in order not to do heavy operations in a chron job.
                                 // By default, there are only 2 threads allocated to Quartz, the scheduler. 
                                 // All cron rules, Timers, and Astro triggered rules all use this…
-Number default_tnl_timer_value
-Number default_tnl_timer_missed_actinon_value
-Number default_tnl_timer_extendedDryingTime_value
+Number default_tnl_timer_value (gPersist_On_Every_Change)
+Number default_tnl_timer_missed_actinon_value (gPersist_On_Every_Change)
+Number default_tnl_timer_extendedDryingTime_value (gPersist_On_Every_Change)
 
-Switch test
- Switch tnl_51_setCurrentTimer_sw // ????????????????????????????????????????????????????????
-
+Switch globalInit // init all tunnel values to defaults. Init defaults in DB on the first run Then comment the lines in tnl.rules rule! Note: Tunnels should not be enabled when using
+Switch enableAllTunnels
+Switch disableAllTunnels
 // // Tunnel tnl_51  // // 
 // // // // // // // // //
 Group gtnl_51_btn_ctrl (gTunnelItems)
 
-Switch tnl_51_btnctrl_enable        (gtnl_51_btn_ctrl)                   
+Switch tnl_51_btnctrl_enable        (gtnl_51_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_51_btnaction_enable      (gtnl_51_btn_ctrl)                
 Switch tnl_51_missed_action_countdown_enable_sw    (gtnl_51_btn_ctrl) // In case restarting after power out   
 Switch tnl_51_resetTimer_sw    (gtnl_51_btn_ctrl) // In case restarting after power out   
@@ -31,7 +31,7 @@ Number tnl_51_current_timer_value               (gtnl_51_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_1_btn_ctrl (gTunnelItems)
 
-Switch tnl_1_btnctrl_enable        (gtnl_1_btn_ctrl)                   
+Switch tnl_1_btnctrl_enable        (gtnl_1_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_1_btnaction_enable      (gtnl_1_btn_ctrl)                
 Switch tnl_1_missed_action_countdown_enable_sw    (gtnl_1_btn_ctrl) // In case restarting after power out   
 Switch tnl_1_resetTimer_sw    (gtnl_1_btn_ctrl) // In case restarting after power out   
@@ -46,7 +46,7 @@ Number tnl_1_current_timer_value               (gtnl_1_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_2_btn_ctrl (gTunnelItems)
 
-Switch tnl_2_btnctrl_enable        (gtnl_2_btn_ctrl)                   
+Switch tnl_2_btnctrl_enable        (gtnl_2_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_2_btnaction_enable      (gtnl_2_btn_ctrl)                
 Switch tnl_2_missed_action_countdown_enable_sw    (gtnl_2_btn_ctrl) // In case restarting after power out   
 Switch tnl_2_resetTimer_sw    (gtnl_2_btn_ctrl) // In case restarting after power out   
@@ -61,7 +61,7 @@ Number tnl_2_current_timer_value               (gtnl_2_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_3_btn_ctrl (gTunnelItems)
 
-Switch tnl_3_btnctrl_enable        (gtnl_3_btn_ctrl)                   
+Switch tnl_3_btnctrl_enable        (gtnl_3_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_3_btnaction_enable      (gtnl_3_btn_ctrl)                
 Switch tnl_3_missed_action_countdown_enable_sw    (gtnl_3_btn_ctrl) // In case restarting after power out   
 Switch tnl_3_resetTimer_sw    (gtnl_3_btn_ctrl) // In case restarting after power out   
@@ -76,7 +76,7 @@ Number tnl_3_current_timer_value               (gtnl_3_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_4_btn_ctrl (gTunnelItems)
 
-Switch tnl_4_btnctrl_enable        (gtnl_4_btn_ctrl)                   
+Switch tnl_4_btnctrl_enable        (gtnl_4_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_4_btnaction_enable      (gtnl_4_btn_ctrl)                
 Switch tnl_4_missed_action_countdown_enable_sw    (gtnl_4_btn_ctrl) // In case restarting after power out   
 Switch tnl_4_resetTimer_sw    (gtnl_4_btn_ctrl) // In case restarting after power out   
@@ -91,7 +91,7 @@ Number tnl_4_current_timer_value               (gtnl_4_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_5_btn_ctrl (gTunnelItems)
 
-Switch tnl_5_btnctrl_enable        (gtnl_5_btn_ctrl)                   
+Switch tnl_5_btnctrl_enable        (gtnl_5_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_5_btnaction_enable      (gtnl_5_btn_ctrl)                
 Switch tnl_5_missed_action_countdown_enable_sw    (gtnl_5_btn_ctrl) // In case restarting after power out   
 Switch tnl_5_resetTimer_sw    (gtnl_5_btn_ctrl) // In case restarting after power out   
@@ -106,7 +106,7 @@ Number tnl_5_current_timer_value               (gtnl_5_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_6_btn_ctrl (gTunnelItems)
 
-Switch tnl_6_btnctrl_enable        (gtnl_6_btn_ctrl)                   
+Switch tnl_6_btnctrl_enable        (gtnl_6_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_6_btnaction_enable      (gtnl_6_btn_ctrl)                
 Switch tnl_6_missed_action_countdown_enable_sw    (gtnl_6_btn_ctrl) // In case restarting after power out   
 Switch tnl_6_resetTimer_sw    (gtnl_6_btn_ctrl) // In case restarting after power out   
@@ -121,7 +121,7 @@ Number tnl_6_current_timer_value               (gtnl_6_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_7_btn_ctrl (gTunnelItems)
 
-Switch tnl_7_btnctrl_enable        (gtnl_7_btn_ctrl)                   
+Switch tnl_7_btnctrl_enable        (gtnl_7_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_7_btnaction_enable      (gtnl_7_btn_ctrl)                
 Switch tnl_7_missed_action_countdown_enable_sw    (gtnl_7_btn_ctrl) // In case restarting after power out   
 Switch tnl_7_resetTimer_sw    (gtnl_7_btn_ctrl) // In case restarting after power out   
@@ -136,7 +136,7 @@ Number tnl_7_current_timer_value               (gtnl_7_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_8_btn_ctrl (gTunnelItems)
 
-Switch tnl_8_btnctrl_enable        (gtnl_8_btn_ctrl)                   
+Switch tnl_8_btnctrl_enable        (gtnl_8_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_8_btnaction_enable      (gtnl_8_btn_ctrl)                
 Switch tnl_8_missed_action_countdown_enable_sw    (gtnl_8_btn_ctrl) // In case restarting after power out   
 Switch tnl_8_resetTimer_sw    (gtnl_8_btn_ctrl) // In case restarting after power out   
@@ -151,7 +151,7 @@ Number tnl_8_current_timer_value               (gtnl_8_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_9_btn_ctrl (gTunnelItems)
 
-Switch tnl_9_btnctrl_enable        (gtnl_9_btn_ctrl)                   
+Switch tnl_9_btnctrl_enable        (gtnl_9_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_9_btnaction_enable      (gtnl_9_btn_ctrl)                
 Switch tnl_9_missed_action_countdown_enable_sw    (gtnl_9_btn_ctrl) // In case restarting after power out   
 Switch tnl_9_resetTimer_sw    (gtnl_9_btn_ctrl) // In case restarting after power out   
@@ -166,7 +166,7 @@ Number tnl_9_current_timer_value               (gtnl_9_btn_ctrl, gCurrentTnlTime
 // // // // // // // // //
 Group gtnl_10_btn_ctrl (gTunnelItems)
 
-Switch tnl_10_btnctrl_enable        (gtnl_10_btn_ctrl)                   
+Switch tnl_10_btnctrl_enable        (gtnl_10_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_10_btnaction_enable      (gtnl_10_btn_ctrl)                
 Switch tnl_10_missed_action_countdown_enable_sw    (gtnl_10_btn_ctrl) // In case restarting after power out   
 Switch tnl_10_resetTimer_sw    (gtnl_10_btn_ctrl) // In case restarting after power out   
@@ -181,7 +181,7 @@ Number tnl_10_current_timer_value               (gtnl_10_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_11_btn_ctrl (gTunnelItems)
 
-Switch tnl_11_btnctrl_enable        (gtnl_11_btn_ctrl)                   
+Switch tnl_11_btnctrl_enable        (gtnl_11_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_11_btnaction_enable      (gtnl_11_btn_ctrl)                
 Switch tnl_11_missed_action_countdown_enable_sw    (gtnl_11_btn_ctrl) // In case restarting after power out   
 Switch tnl_11_resetTimer_sw    (gtnl_11_btn_ctrl) // In case restarting after power out   
@@ -196,7 +196,7 @@ Number tnl_11_current_timer_value               (gtnl_11_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_12_btn_ctrl (gTunnelItems)
 
-Switch tnl_12_btnctrl_enable        (gtnl_12_btn_ctrl)                   
+Switch tnl_12_btnctrl_enable        (gtnl_12_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_12_btnaction_enable      (gtnl_12_btn_ctrl)                
 Switch tnl_12_missed_action_countdown_enable_sw    (gtnl_12_btn_ctrl) // In case restarting after power out   
 Switch tnl_12_resetTimer_sw    (gtnl_12_btn_ctrl) // In case restarting after power out   
@@ -211,7 +211,7 @@ Number tnl_12_current_timer_value               (gtnl_12_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_13_btn_ctrl (gTunnelItems)
 
-Switch tnl_13_btnctrl_enable        (gtnl_13_btn_ctrl)                   
+Switch tnl_13_btnctrl_enable        (gtnl_13_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_13_btnaction_enable      (gtnl_13_btn_ctrl)                
 Switch tnl_13_missed_action_countdown_enable_sw    (gtnl_13_btn_ctrl) // In case restarting after power out   
 Switch tnl_13_resetTimer_sw    (gtnl_13_btn_ctrl) // In case restarting after power out   
@@ -226,7 +226,7 @@ Number tnl_13_current_timer_value               (gtnl_13_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_14_btn_ctrl (gTunnelItems)
 
-Switch tnl_14_btnctrl_enable        (gtnl_14_btn_ctrl)                   
+Switch tnl_14_btnctrl_enable        (gtnl_14_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_14_btnaction_enable      (gtnl_14_btn_ctrl)                
 Switch tnl_14_missed_action_countdown_enable_sw    (gtnl_14_btn_ctrl) // In case restarting after power out   
 Switch tnl_14_resetTimer_sw    (gtnl_14_btn_ctrl) // In case restarting after power out   
@@ -241,7 +241,7 @@ Number tnl_14_current_timer_value               (gtnl_14_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_15_btn_ctrl (gTunnelItems)
 
-Switch tnl_15_btnctrl_enable        (gtnl_15_btn_ctrl)                   
+Switch tnl_15_btnctrl_enable        (gtnl_15_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_15_btnaction_enable      (gtnl_15_btn_ctrl)                
 Switch tnl_15_missed_action_countdown_enable_sw    (gtnl_15_btn_ctrl) // In case restarting after power out   
 Switch tnl_15_resetTimer_sw    (gtnl_15_btn_ctrl) // In case restarting after power out   
@@ -256,7 +256,7 @@ Number tnl_15_current_timer_value               (gtnl_15_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_16_btn_ctrl (gTunnelItems)
 
-Switch tnl_16_btnctrl_enable        (gtnl_16_btn_ctrl)                   
+Switch tnl_16_btnctrl_enable        (gtnl_16_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_16_btnaction_enable      (gtnl_16_btn_ctrl)                
 Switch tnl_16_missed_action_countdown_enable_sw    (gtnl_16_btn_ctrl) // In case restarting after power out   
 Switch tnl_16_resetTimer_sw    (gtnl_16_btn_ctrl) // In case restarting after power out   
@@ -270,7 +270,7 @@ Number tnl_16_current_timer_value               (gtnl_16_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_17_btn_ctrl (gTunnelItems)
 
-Switch tnl_17_btnctrl_enable        (gtnl_17_btn_ctrl)                   
+Switch tnl_17_btnctrl_enable        (gtnl_17_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_17_btnaction_enable      (gtnl_17_btn_ctrl)                
 Switch tnl_17_missed_action_countdown_enable_sw    (gtnl_17_btn_ctrl) // In case restarting after power out   
 Switch tnl_17_resetTimer_sw    (gtnl_17_btn_ctrl) // In case restarting after power out   
@@ -285,7 +285,7 @@ Number tnl_17_current_timer_value               (gtnl_17_btn_ctrl, gCurrentTnlTi
 // // // // // // // // //
 Group gtnl_18_btn_ctrl (gTunnelItems)
 
-Switch tnl_18_btnctrl_enable        (gtnl_18_btn_ctrl)                   
+Switch tnl_18_btnctrl_enable        (gtnl_18_btn_ctrl, gEnableTunnelsw)                   
 Switch tnl_18_btnaction_enable      (gtnl_18_btn_ctrl)                
 Switch tnl_18_missed_action_countdown_enable_sw    (gtnl_18_btn_ctrl) // In case restarting after power out   
 Switch tnl_18_resetTimer_sw    (gtnl_18_btn_ctrl) // In case restarting after power out   

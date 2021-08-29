@@ -1,4 +1,333 @@
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+//  //  //  //  //  INITIAL SET ALL TO DEFAULTS   //  //  //  //  //  //  //  //
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
+
+rule "Button initialSetDefaultsToAllTunnesls is prerssed"
+when
+    // Item globalInit received command
+    // or
+    Item globalInit changed 
+then
+        logInfo("Set to default", "?????????????????Setting all tunnel values to the defaults!")
+
+    if(globalInit.state == ON){
+        logInfo("Set to default", "!!!!!!!!!!!!!!!!!!!Setting all tunnel values to the defaults!")
+
+    // Initially fill the defaults in the DB with this lines. 
+    // Comment out after that!:
+    // default_tnl_timer_value.postUpdate(1)
+    // default_tnl_timer_missed_actinon_value.postUpdate(5)
+    // default_tnl_timer_extendedDryingTime_value.postUpdate(1)
+    
+    //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
+    tnl_51_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_51_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_51_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_1   //  //  //  //  //  //  //  //
+    tnl_1_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_1_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_1_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_1_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_2   //  //  //  //  //  //  //  //
+    tnl_2_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_2_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_2_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_2_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_3   //  //  //  //  //  //  //  //
+    tnl_3_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_3_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_3_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_3_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+    
+    //  //  //  //  //  TUNNEL tnl_4   //  //  //  //  //  //  //  //
+    tnl_4_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_4_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_4_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_4_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_5   //  //  //  //  //  //  //  //
+    tnl_5_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_5_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_5_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_5_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_6   //  //  //  //  //  //  //  //
+    tnl_6_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_6_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_6_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_6_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_7   //  //  //  //  //  //  //  //
+    tnl_7_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_7_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_7_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_7_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_8   //  //  //  //  //  //  //  //
+    tnl_8_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_8_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_8_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_8_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_9   //  //  //  //  //  //  //  //
+    tnl_9_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_9_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_9_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_9_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_10   //  //  //  //  //  //  //  //
+    tnl_10_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_10_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_10_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_10_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_11   //  //  //  //  //  //  //  //
+    tnl_11_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_11_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_11_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_11_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_12   //  //  //  //  //  //  //  //
+    tnl_12_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_12_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_12_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_12_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_13   //  //  //  //  //  //  //  //
+    tnl_13_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_13_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_13_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_13_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_14   //  //  //  //  //  //  //  //
+    tnl_14_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_14_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_14_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_14_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_15   //  //  //  //  //  //  //  //
+    tnl_15_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_15_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_15_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_15_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_16   //  //  //  //  //  //  //  //
+    tnl_16_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_16_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_16_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_16_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_17   //  //  //  //  //  //  //  //
+    tnl_17_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_17_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_17_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_17_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+    //  //  //  //  //  TUNNEL tnl_18   //  //  //  //  //  //  //  //
+    tnl_18_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+    tnl_18_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+    tnl_18_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+    tnl_18_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+}
+end
+
+rule "Button enableAllTunnels is prerssed"
+when
+    // Item globalInit received command
+    // or
+    Item enableAllTunnels changed 
+then
+    logInfo("EnableAllTunnels", "Enabling tunnel signalisation- All tunnels!")
+
+    if(enableAllTunnels.state == ON){
+        logInfo("EnableAllTunnels", "Enabling tunnel signalisation - All tunnels!")
+        gEnableTunnelsw.allMembers.forEach [ item | item.sendCommand(ON) ]  // Turn off the Button LED's on both sides
+    }
+end
+
+rule "Button disableAllTunnels is prerssed"
+when
+    // Item globalInit received command
+    // or
+    Item disableAllTunnels changed 
+then
+    // logInfo("disableAllTunnels", "disableAllTunnels tunnel signalisation- All tunnels!")
+
+    if(disableAllTunnels.state == ON){
+        logInfo("DisableAllTunnels", "Disable tunnel signalisation - All tunnels!")
+        gEnableTunnelsw.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+    }
+end
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+//  //  //  //  //  INITIAL SET ALL TO DEFAULTS   //  //  //  //  //  //  //  //
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
+
+// rule "Button initialSetDefaultsToAllTunnesls is prerssed"
+// when
+//     // Item globalInit received command
+//     // or
+//     Item globalInit changed 
+// then
+//     logInfo("Set to default", "PREDI Global setting all to default!")
+
+//     if(globalInit.state == ON){
+//         logInfo("Set to default", "Sled Global setting all to default!")
+    
+//     //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
+//     tnl_51_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_51_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_51_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_1   //  //  //  //  //  //  //  //
+//     tnl_1_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_1_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_1_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_1_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_2   //  //  //  //  //  //  //  //
+//     tnl_2_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_2_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_2_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_2_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_3   //  //  //  //  //  //  //  //
+//     tnl_3_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_3_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_3_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_3_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+    
+//     //  //  //  //  //  TUNNEL tnl_4   //  //  //  //  //  //  //  //
+//     tnl_4_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_4_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_4_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_4_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_5   //  //  //  //  //  //  //  //
+//     tnl_5_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_5_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_5_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_5_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_6   //  //  //  //  //  //  //  //
+//     tnl_6_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_6_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_6_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_6_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_7   //  //  //  //  //  //  //  //
+//     tnl_7_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_7_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_7_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_7_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_8   //  //  //  //  //  //  //  //
+//     tnl_8_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_8_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_8_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_8_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_9   //  //  //  //  //  //  //  //
+//     tnl_9_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_9_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_9_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_9_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_10   //  //  //  //  //  //  //  //
+//     tnl_10_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_10_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_10_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_10_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_11   //  //  //  //  //  //  //  //
+//     tnl_11_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_11_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_11_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_11_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_12   //  //  //  //  //  //  //  //
+//     tnl_12_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_12_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_12_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_12_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_13   //  //  //  //  //  //  //  //
+//     tnl_13_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_13_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_13_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_13_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_14   //  //  //  //  //  //  //  //
+//     tnl_14_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_14_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_14_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_14_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_15   //  //  //  //  //  //  //  //
+//     tnl_15_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_15_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_15_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_15_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_16   //  //  //  //  //  //  //  //
+//     tnl_16_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_16_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_16_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_16_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_17   //  //  //  //  //  //  //  //
+//     tnl_17_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_17_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_17_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_17_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_18   //  //  //  //  //  //  //  //
+//     tnl_18_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_18_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_18_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_18_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+// }
+// end
+
+// rule "Button tsts is prerssed"
+// when
+//     // Item tsts received command
+//     // or
+//     Item globalInit changed 
+// then
+    
+//     if(globalInit.state == ON){
+//         logInfo("Set to default", "PREDI Global setting all to default!")
+//     // Initially fill the defaults in the DB with this lines. 
+//     // Comment out after that!:
+//     // default_tnl_timer_value.postUpdate(1)
+//     // default_tnl_timer_missed_actinon_value.postUpdate(5)
+//     // default_tnl_timer_extendedDryingTime_value.postUpdate(1)
+
+
+//     //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
+//     tnl_51_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_51_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_51_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+
+//     //  //  //  //  //  TUNNEL tnl_1   //  //  //  //  //  //  //  //
+//     tnl_1_timer_default_value.postUpdate(default_tnl_timer_value.state as DecimalType)                                             
+//     tnl_1_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)                       
+//     tnl_1_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)    
+//     tnl_1_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType)
+//      logInfo("Set to default", "Sled Global setting all to default!")
+//     }
+// end    
+
 // rule "Test  tnl_51_set_all_to_defaults_sw changed"
 // when
 //     Item test changed 
@@ -126,4 +455,4 @@
 //     LoungeBlind.sendCommand(UP)
 //   ])
 
-end
+// end

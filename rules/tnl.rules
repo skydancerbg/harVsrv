@@ -35,6 +35,25 @@ var Timer tnl_17_setAllToDefaultsSWTimer = null
 var Timer tnl_18_resetButtonSWTimer = null
 var Timer tnl_18_setAllToDefaultsSWTimer = null
 
+///test..................
+// //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
+// //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+//     if(tnl_51_btnctrl_enable.state == ON) {
+//         tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
+
+//         if(tnl_51_missed_action_countdown_enable_sw.state == ON){
+//         tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
+//         }
+
+//         if(tnl_51_current_timer_value.state as DecimalType == 0 ){   // If tunnel timer expired
+//             tnl_51_btnaction_enable.sendCommand(ON) // Enable button press
+//             tnl_51_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
+//             g51_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
+//             g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
+// // logInfo("Rule: Decrement timers", "tnl_51 Timer expired !!!")
+//         }
+//     }
+
 
 // //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 // //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
@@ -179,6 +198,8 @@ when
     Item tnl_1_btnctrl_enable changed 
 then
     if(tnl_1_btnctrl_enable.state == ON){
+        logInfo("tnl_1_btnctrl_enable", "btnctrl_enable ON - ENABLE ")
+
         // tnl_1_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Will NOT SET to default value - in case of power shutdown!!!!
         tnl_1_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)
         tnl_1_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)
@@ -188,6 +209,7 @@ then
         g1_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
         g1_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
     }else{
+logInfo("tnl_1_btnctrl_enable", "btnctrl_enable OFF - DISABLE ")
         tnl_1_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_1_missed_action_countdown_enable_sw.sendCommand(OFF)
         g1_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1743,6 +1765,7 @@ end
 // //  //  //  //  //  TUNNEL tnl_17   //  //  //  //  //  //  //  //
 // //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
 
+
 rule "Button out_17 OUT is prerssed"
 when
     // Item out_17_button received command
@@ -1754,8 +1777,8 @@ then
         tnl_17_missed_action_countdown_enable_sw.sendCommand(OFF)
         tnl_17_timer_missed_actinon_value.postUpdate((tnl_17_timer_missed_actinon_value.state as DecimalType))
         logInfo("Rule: out_17 OUT is prerssed", "HAS TO TURN OFF LIGHTS NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
-        g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+        g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
         tnl_17_current_timer_value.postUpdate(tnl_17_timer_extendedDryingTime_value.state as DecimalType) // Set the tunnel timer to the vaue for extended time
 }
 end
@@ -1771,8 +1794,8 @@ then
         tnl_17_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Set the tunnel timer to default value
         tnl_17_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType) // Set the tunnel timer to the vaue for extended time
         logInfo("Rule: out_17 OUT is prerssed", "HAS TO TURN OFF LIGHTS NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
-        g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+        g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
 }
 end
 
@@ -1787,13 +1810,13 @@ then
         tnl_17_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Set the tunnel timer to default value
         tnl_17_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_17_missed_action_countdown_enable_sw.sendCommand(OFF)
-        g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
-        g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+        g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
     }else{
         tnl_17_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_17_missed_action_countdown_enable_sw.sendCommand(OFF)
-        g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
-        g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+        g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
     }
 end
 
@@ -1806,8 +1829,8 @@ logInfo("Set All to defaults", "tnl_17 set all to defaultsswitched Predi ifa!")
 logInfo("Set All to defaults", "tnl_17 set all to defaultsswitched ON pressed!")
         tnl_17_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_17_missed_action_countdown_enable_sw.sendCommand(OFF)
-        g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
-        g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides       
+        g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides       
         tnl_17_current_timer_value.postUpdate(default_tnl_timer_value.state as DecimalType) // Set the tunnel timer to default value
         tnl_17_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType) 
         tnl_17_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)
@@ -1830,14 +1853,13 @@ then
         tnl_17_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_17_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_17_missed_action_countdown_enable_sw.sendCommand(OFF)
-        g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
-        g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
+        g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
+        g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
         tnl_17_resetButtonSWTimer = createTimer(now.plusSeconds(5), [ |
             tnl_17_resetTimer_sw.sendCommand(OFF)
         ])           
     }
 end
-
 
 // //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 // //  //  //  //  //  TUNNEL tnl_18   //  //  //  //  //  //  //  //
@@ -1890,6 +1912,8 @@ then
         g18_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
         g18_tnl_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Tunnel Lights on both sides
     }else{
+        logInfo("Tunnel 18", "DISABLE ROUTINE")
+
         tnl_18_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_18_missed_action_countdown_enable_sw.sendCommand(OFF)
         g18_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides

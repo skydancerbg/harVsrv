@@ -18,41 +18,21 @@ when
 then
 // logInfo("Rule: Decrement timers", "gCurrentTnlTimers DECREMENT!!!")
 
-///test..................
-// //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
-// //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-//     if(tnl_51_btnctrl_enable.state == ON) {
-//         tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
-
-//         if(tnl_51_missed_action_countdown_enable_sw.state == ON){
-//         tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
-//         }
-
-//         if(tnl_51_current_timer_value.state as DecimalType == 0 ){   // If tunnel timer expired
-//             tnl_51_btnaction_enable.sendCommand(ON) // Enable button press
-//             tnl_51_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
-//             g51_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
-//             g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-// // logInfo("Rule: Decrement timers", "tnl_51 Timer expired !!!")
-//         }
-//     }
-
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
     if(tnl_51_btnctrl_enable.state == ON) {
-        tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
-
-        if(tnl_51_missed_action_countdown_enable_sw.state == ON){
-        tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
-        }
-
-        if(tnl_51_current_timer_value.state as DecimalType == 0 ){   // If tunnel timer expired
+        if(tnl_51_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired in this moment it will be set to 0
             tnl_51_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_51_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g51_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
 // logInfo("Rule: Decrement timers", "tnl_51 Timer expired !!!")
+        }
+        tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
+
+        if(tnl_51_missed_action_countdown_enable_sw.state == ON){
+        tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
     }
 

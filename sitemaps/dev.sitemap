@@ -4,6 +4,13 @@ sitemap dev label="Development test page" {
         
         Frame label="МАСТЕР ДЕФОЛТ" {
 
+            Switch item=globalInit       label="Global initial INIT all tunnel values!"
+            Text item=none                  
+            Switch item=enableAllTunnels label="Global ENABLE all tunnels!"
+            Switch item=disableAllTunnels label="Global DISABLE all tunnels!"
+            Text item=none                  
+            Text item=none  
+            Text item=none
             Setpoint item=default_tnl_timer_value                       label="Глобално: Таймер времеза сушене  [%d минути]" icon="time" minValue=1 maxValue=1440 step=1
             Setpoint item=default_tnl_timer_missed_actinon_value        label="Глобално: Таймер аларма при бездействие [%d минути]" icon="time" minValue=1 maxValue=1440 step=1
             Setpoint item=default_tnl_timer_extendedDryingTime_value    label="Глобално: Допълнително време за сушене  [%d минути]" icon="time" minValue=1 maxValue=1440 step=1    
@@ -19,7 +26,7 @@ sitemap dev label="Development test page" {
             Text item=none
             Switch item=tnl_51_btnctrl_enable  label="Tunnel 51 - POWER"                         
             Text item=none                  
-            Switch item=test label="test" 
+             
 }
 
         Frame label="ТАЙМЕРИ" {
@@ -35,8 +42,46 @@ sitemap dev label="Development test page" {
              Text item=none                  
             Switch item=tnl_51_resetTimer_sw   label="RESET"
             Text item=none                  
+
             Text item=none     label="TUNNEL 1"             
+            Setpoint item=tnl_1_current_timer_value label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            Text item=none                  
+            Setpoint item=tnl_1_timer_default_value            label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
+            Setpoint item=tnl_1_timer_extendedDryingTime_value label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
+             Text item=none                  
+            Switch item=tnl_1_resetTimer_sw   label="RESET"
             Text item=none
+
+            Text item=none     label="TUNNEL 2"             
+            Setpoint item=tnl_2_current_timer_value label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            Text item=none                  
+            Setpoint item=tnl_2_timer_default_value            label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
+            Setpoint item=tnl_2_timer_extendedDryingTime_value label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
+            Text item=none                  
+            Switch item=tnl_2_resetTimer_sw   label="RESET"
+            Text item=none                  
+
+            Text item=none     label="TUNNEL 3"             
+            Text item=none
+            Setpoint item=tnl_3_current_timer_value label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            Text item=none                  
+            Setpoint item=tnl_3_timer_default_value            label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
+            Setpoint item=tnl_3_timer_extendedDryingTime_value label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
+            Text item=none                  
+            Switch item=tnl_3_resetTimer_sw   label="RESET"
+            Text item=none    
+
+
+
+
+
+
+
+
+
+
+
+
             // Text item=none
             // Switch item=out_51_tnl_light label="Туnel 51 OUT Tunnel Light"
             // Switch item=out_51_btn_light  label="Туnel 51 OUT BUTTON Light"
