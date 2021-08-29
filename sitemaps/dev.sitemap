@@ -1,46 +1,28 @@
-//divide-number-when-displaying-in-sitemap
-// https://community.openhab.org/t/divide-number-when-displaying-in-sitemap/36577
+sitemap dev label="Development test page" {
 
 
-// http://10.50.20.100:8080/basicui/app?sitemap=dev
-
-sitemap timers label="ТАЙМЕРИ" {
-
-        // Frame label="ДАТА/ЧАС:" {
-        //     Text item=Date 
-        //     Text item=none
-        // }
         
-        // Frame label="Светлини:" {
-        // //     // Switch item=tnl_in_btn_1_tnl_light icon="solar_panel_house" label="СОЛАР" mappings=[ON="РАБОТИ"]  visibility=[GF_HR_solar_pump_On_Off==ON]
-        // //     // Switch item=GF_HR_solar_pump_On_Off icon="solar_energy_off_blue" label="СОЛАР" mappings=[OFF="ИЗКЛЮЧЕН"] visibility=[GF_HR_solar_pump_On_Off==OFF]
+        Frame label="МАСТЕР ДЕФОЛТ" {
 
-        // //     // Switch item=tnl_in_btn_1_tnl_light icon="unsecured_shield"  visibility=[Alarm_Arm_Disarm_Switch==0] mappings=[1="АКТИВИРАЙ"]   
-        // //     // Switch item=tnl_in_btn_1_tnl_light icon="secured_shield"    visibility=[Alarm_Arm_Disarm_Switch==1] mappings=[0="СПРИ"]
+            Setpoint item=default_tnl_timer_value                       label="Глобално: Таймер времеза сушене  [%d минути]" icon="time" minValue=1 maxValue=1440 step=1
+            Setpoint item=default_tnl_timer_missed_actinon_value        label="Глобално: Таймер аларма при бездействие [%d минути]" icon="time" minValue=1 maxValue=1440 step=1
+            Setpoint item=default_tnl_timer_extendedDryingTime_value    label="Глобално: Допълнително време за сушене  [%d минути]" icon="time" minValue=1 maxValue=1440 step=1    
+            Text item=none
+// Иване разкарай тоя сетинг от индивидуалните тунели. Да се ползва само глобалния  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!            
+            // REMOVE tnis setting for individual tunnels
+            // Setpoint item=tnl_51_timer_missed_actinon_value     label="Тунел 51 - Таймер пропуснато действие[%d минути]" icon="time" minValue=1 maxValue=1440 step=1                                    
+            Text item=none                  
+            Text item=none        
+            Switch item=tnl_51_set_all_to_defaults_sw  label="Tunnel 51 - Set values to default"
+            Text item=none                  
+            Text item=none  
+            Text item=none
+            Switch item=tnl_51_btnctrl_enable  label="Tunnel 51 - POWER"                         
+            Text item=none                  
+            Switch item=test label="test" 
+}
 
-        // //     // Switch item= in_btn_51_tnl_light icon="light-on"  label="Светлина на бутон ВХОД Тунел 1" mappings=[ON="ВКЛЮЧЕНА"]        visibility=[tnl_in_btn_1_tnl_light==ON]
-        // //     // Switch item= in_btn_51_tnl_light icon="light-off" label="Светлина на бутон ВХОД Тунел 1" mappings=[OFF="ИЗКЛЮЧЕНА"]      visibility=[tnl_in_btn_1_tnl_light==OFF]
-        // //     // Switch item=out_btn_51_tnl_light icon="light-on"  label="Светлина на бутон ИЗХОД Тунел 1" mappings=[ON="ВКЛЮЧЕНА"]      visibility=[tnl_out_btn_1_tnl_light==ON]
-        // //     // Switch item=out_btn_51_tnl_light icon="light-off" label="Светлина на бутон ИЗХОД Тунел 1" mappings=[OFF="ИЗКЛЮЧЕНА"]    visibility=[tnl_out_btn_1_tnl_light==OFF]
-        //     Switch item=in_51_btn_light
-        //     Switch item=out_51_btn_light
-        // }
-
- 
-
-
-        // Frame label="Butoni:" {
-            
-        //     // Switch item=in_51_btn_light
-        //     // Switch item=out_51_btn_light
-        //     // Switch item=in_51_tnl_light
-        //     // Switch item=out_51_tnl_light
-        //     // Switch item=in_51_button label="Buton!!!"
-        //     // Switch item=out_51_button label="Buton!!!"
-
-        // }
-        
-        Frame label="Управление сигнализация и бутони" {
+        Frame label="ТАЙМЕРИ" {
 
 
             Text item=none     label="TUNNEL 51"             
@@ -78,13 +60,6 @@ sitemap timers label="ТАЙМЕРИ" {
 
         }
 
-        // Frame label="Butoni:" {
-            
-        //     // Group item=gIn_51_lights
-        //     // Group item=gOut_51
-        // }
 
 
 }
-
-      
