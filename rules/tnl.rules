@@ -143,7 +143,7 @@ then
 
         tnl_51_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_51_current_timer_value.postUpdate(tnl_51_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_51_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_51_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_51_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_51_missed_action_countdown_enable_sw.sendCommand(OFF)
         g51_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -247,7 +247,7 @@ then
 
         tnl_1_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_1_current_timer_value.postUpdate(tnl_1_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_1_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_1_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_1_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_1_missed_action_countdown_enable_sw.sendCommand(OFF)
         g1_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -347,7 +347,7 @@ then
 
         tnl_2_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_2_current_timer_value.postUpdate(tnl_2_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_2_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_2_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_2_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_2_missed_action_countdown_enable_sw.sendCommand(OFF)
         g2_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -447,7 +447,7 @@ then
 
         tnl_3_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_3_current_timer_value.postUpdate(tnl_3_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_3_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_3_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_3_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_3_missed_action_countdown_enable_sw.sendCommand(OFF)
         g3_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -547,7 +547,7 @@ then
 
         tnl_4_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_4_current_timer_value.postUpdate(tnl_4_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_4_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_4_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_4_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_4_missed_action_countdown_enable_sw.sendCommand(OFF)
         g4_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -647,7 +647,7 @@ then
 
         tnl_5_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_5_current_timer_value.postUpdate(tnl_5_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_5_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_5_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_5_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_5_missed_action_countdown_enable_sw.sendCommand(OFF)
         g5_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -748,7 +748,7 @@ then
 
         tnl_6_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_6_current_timer_value.postUpdate(tnl_6_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_6_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_6_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_6_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_6_missed_action_countdown_enable_sw.sendCommand(OFF)
         g6_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -848,7 +848,7 @@ then
 
         tnl_7_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_7_current_timer_value.postUpdate(tnl_7_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_7_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_7_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_7_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_7_missed_action_countdown_enable_sw.sendCommand(OFF)
         g7_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -948,7 +948,7 @@ then
 
         tnl_8_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_8_current_timer_value.postUpdate(tnl_8_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_8_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_8_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_8_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_8_missed_action_countdown_enable_sw.sendCommand(OFF)
         g8_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1048,7 +1048,7 @@ then
 
         tnl_9_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_9_current_timer_value.postUpdate(tnl_9_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_9_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_9_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_9_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_9_missed_action_countdown_enable_sw.sendCommand(OFF)
         g9_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1148,7 +1148,7 @@ then
 
         tnl_10_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_10_current_timer_value.postUpdate(tnl_10_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_10_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_10_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_10_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_10_missed_action_countdown_enable_sw.sendCommand(OFF)
         g10_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1249,7 +1249,7 @@ then
 
         tnl_11_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_11_current_timer_value.postUpdate(tnl_11_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_11_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_11_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_11_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_11_missed_action_countdown_enable_sw.sendCommand(OFF)
         g11_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1349,7 +1349,7 @@ then
 
         tnl_12_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_12_current_timer_value.postUpdate(tnl_12_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_12_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_12_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   /// Updates te Global default value 
         tnl_12_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_12_missed_action_countdown_enable_sw.sendCommand(OFF)
         g12_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1449,7 +1449,7 @@ then
 
         tnl_13_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_13_current_timer_value.postUpdate(tnl_13_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_13_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_13_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_13_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_13_missed_action_countdown_enable_sw.sendCommand(OFF)
         g13_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1549,7 +1549,7 @@ then
 
         tnl_14_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_14_current_timer_value.postUpdate(tnl_14_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_14_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_14_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_14_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_14_missed_action_countdown_enable_sw.sendCommand(OFF)
         g14_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1649,7 +1649,7 @@ then
 
         tnl_15_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_15_current_timer_value.postUpdate(tnl_15_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_15_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_15_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_15_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_15_missed_action_countdown_enable_sw.sendCommand(OFF)
         g15_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1749,7 +1749,7 @@ then
 
         tnl_16_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_16_current_timer_value.postUpdate(tnl_16_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_16_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_16_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_16_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_16_missed_action_countdown_enable_sw.sendCommand(OFF)
         g16_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1850,7 +1850,7 @@ then
 
         tnl_17_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_17_current_timer_value.postUpdate(tnl_17_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_17_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_17_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_17_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_17_missed_action_countdown_enable_sw.sendCommand(OFF)
         g17_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides
@@ -1951,7 +1951,7 @@ then
 
         tnl_18_timer_missed_actinon_value.postUpdate(default_tnl_timer_missed_actinon_value.state as DecimalType)           // Updates te Global default value
         tnl_18_current_timer_value.postUpdate(tnl_18_timer_default_value.state as DecimalType)                              // Updates te Tunnel default value
-        tnl_18_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
+        // tnl_18_timer_extendedDryingTime_value.postUpdate(default_tnl_timer_extendedDryingTime_value.state as DecimalType)   // Updates te Global default value 
         tnl_18_btnaction_enable.sendCommand(OFF) // disable Button press
         tnl_18_missed_action_countdown_enable_sw.sendCommand(OFF)
         g18_btn_lights.allMembers.forEach [ item | item.sendCommand(OFF) ]  // Turn off the Button LED's on both sides

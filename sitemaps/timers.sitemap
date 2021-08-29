@@ -43,16 +43,16 @@ sitemap timers label="ТАЙМЕРИ" {
         Frame label="Управление сигнализация и бутони" {
 
 
-            Text item=none     label="TUNNEL 51"             
-            Setpoint item=tnl_51_current_timer_value label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            // Text item=none     label="TUNNEL 51"             
+            // Setpoint item=tnl_51_current_timer_value label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            // // Text item=none                  
             // Text item=none                  
-            Text item=none                  
+            // // Text item=none                  
+            // Setpoint item=tnl_51_timer_default_value            label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
+            // Setpoint item=tnl_51_timer_extendedDryingTime_value label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
+            //  Text item=none                  
+            // Switch item=tnl_51_resetTimer_sw   label="RESET Tunnel 51"
             // Text item=none                  
-            Setpoint item=tnl_51_timer_default_value            label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
-            Setpoint item=tnl_51_timer_extendedDryingTime_value label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
-             Text item=none                  
-            Switch item=tnl_51_resetTimer_sw   label="RESET Tunnel 51"
-            Text item=none                  
 
             Text item=none     label="TUNNEL 1"             
             Setpoint item=tnl_1_current_timer_value label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
