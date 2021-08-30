@@ -1,18 +1,8 @@
 
-// //  tnl_17
-// //  in_17
-// //  out_17
-// //  g17
-
-
-            // Text item=none                  
-            // Text item=none        
-            // Switch item=tnl_17_set_all_to_defaults_sw  label="Tunnel tnl_17 - Set values to default"
-            // Text item=none                  
-            // Text item=none  
-            // Text item=none
-            // Switch item=tnl_17_btnctrl_enable  label="Tunnel tnl_17 - POWER"  
-
+// //  tnl_7
+// //  in_7
+// //  out_7
+// //  g7
 
 
 
@@ -176,8 +166,8 @@
 //         if(tnl_17_current_timer_value.state as DecimalType == 0 ){   // If tunnel timer expired
 //             tnl_17_btnaction_enable.sendCommand(ON) // Enable button press
 //             tnl_17_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
-//             g6_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
-//             g6_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
+//             g7_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
+//             g7_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
 // // logInfo("Rule: Decrement timers", "tnl_17 Timer expired !!!")
 //         }
 //     }

@@ -12,6 +12,30 @@ Number default_tnl_timer_extendedDryingTime_value (gPersist_On_Every_Change)
 Switch globalInit // init all tunnel values to defaults. Init defaults in DB on the first run Then comment the lines in tnl.rules rule! Note: Tunnels should not be enabled when using
 Switch enableAllTunnels
 Switch disableAllTunnels
+
+
+Switch tnl_1_counterSafety
+Switch tnl_2_counterSafety
+Switch tnl_3_counterSafety
+Switch tnl_4_counterSafety
+Switch tnl_5_counterSafety
+Switch tnl_6_counterSafety
+Switch tnl_7_counterSafety
+Switch tnl_8_counterSafety
+Switch tnl_9_counterSafety
+Switch tnl_10_counterSafety
+Switch tnl_11_counterSafety
+Switch tnl_12_counterSafety
+Switch tnl_13_counterSafety
+Switch tnl_14_counterSafety
+Switch tnl_15_counterSafety
+Switch tnl_16_counterSafety
+Switch tnl_17_counterSafety
+Switch tnl_18_counterSafety
+
+
+
+
 // // Tunnel tnl_51  // // 
 // // // // // // // // //
 Group gtnl_51_btn_ctrl (gTunnelItems)

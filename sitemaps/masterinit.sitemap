@@ -161,11 +161,11 @@ sitemap masterinit label="МАСТЕР ДЕФОЛТ" {
 
             Text item=none                  
             Text item=none        
-            Switch item=tnl_17_set_all_to_defaults_sw  label="Tunnel tnl_17 - Set values to default"
+            Switch item=tnl_18_set_all_to_defaults_sw  label="Tunnel tnl_18 - Set values to default"
             Text item=none                  
             Text item=none  
             Text item=none
-            Switch item=tnl_17_btnctrl_enable  label="Tunnel tnl_17 - POWER"  
+            Switch item=tnl_18_btnctrl_enable  label="Tunnel tnl_18 - POWER"  
 
 
 }

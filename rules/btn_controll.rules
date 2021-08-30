@@ -17,19 +17,19 @@ when
     Item oneMinuteTriggerSwitch changed 
 then
 // logInfo("Rule: Decrement timers", "gCurrentTnlTimers DECREMENT!!!")
-
+logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 //  //  //  //  //  TUNNEL tnl_51   //  //  //  //  //  //  //  //
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
+    tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
     if(tnl_51_btnctrl_enable.state == ON) {
-        if(tnl_51_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired in this moment it will be set to 0
+        if(tnl_51_current_timer_value.state <= 1.0 ){   // If tunnel timer expired in this moment it will be set to 0
             tnl_51_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_51_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g51_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g51_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
 // logInfo("Rule: Decrement timers", "tnl_51 Timer expired !!!")
         }
-        tnl_51_current_timer_value.postUpdate((tnl_51_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
 
         if(tnl_51_missed_action_countdown_enable_sw.state == ON){
         tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
@@ -40,13 +40,18 @@ then
 //  //  //  //  //  TUNNEL tnl_1   //  //  //  //  //  //  //  //
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
     if(tnl_1_btnctrl_enable.state == ON) {
+// logInfo("btn_controll.rules", "Before decrement tnl_1_ TIMER: {}", tnl_1_current_timer_value.state)
         tnl_1_current_timer_value.postUpdate((tnl_1_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
-
+// logInfo("default.rules", "1st Item: {}, 2nd Item: {}, 3rd Item: {}", Item1.state, Item2.state, Item3.state)
+// logInfo("btn_controll.rules", "After decrementtnl tnl_1_ TIMER: {}", tnl_1_current_timer_value.state)
         if(tnl_1_missed_action_countdown_enable_sw.state == ON){
         tnl_1_timer_missed_actinon_value.postUpdate((tnl_1_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_1_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        // if(tnl_1_current_timer_value.state as DecimalType == 0 || tnl_1_current_timer_value.state as DecimalType == 1.0 || tnl_1_current_timer_value.state as DecimalType < 0 ){ 
+        if(tnl_1_current_timer_value.state <= 0  ){ 
+  // If tunnel timer expired
+// logInfo("btn_controll.rules", "tnl_1_ in tnl_1_current_timer_value==0 IMER: {}", tnl_1_current_timer_value.state)
             tnl_1_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_1_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g1_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -60,12 +65,15 @@ then
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
     if(tnl_2_btnctrl_enable.state == ON) {
         tnl_2_current_timer_value.postUpdate((tnl_2_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
+// logInfo("btn_controll.rules", "Iside decrement tnl_2_ TIMER: {}", tnl_1_current_timer_value.state)
 
         if(tnl_2_missed_action_countdown_enable_sw.state == ON){
         tnl_2_timer_missed_actinon_value.postUpdate((tnl_2_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_2_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        // if(tnl_2_current_timer_value.state as DecimalType == 0 || tnl_2_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_2_current_timer_value.state <= 0 ){   // If tunnel timer expired
+logInfo("btn_controll.rules", "tnl_2_current_timer_value==0 IMER: {}", tnl_1_current_timer_value.state)
             tnl_2_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_2_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g2_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -84,7 +92,8 @@ then
         tnl_3_timer_missed_actinon_value.postUpdate((tnl_3_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_3_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        // if(tnl_3_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_3_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_3_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_3_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g3_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -103,7 +112,8 @@ then
         tnl_4_timer_missed_actinon_value.postUpdate((tnl_4_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_4_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        // if(tnl_4_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_4_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_4_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_4_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g4_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -122,7 +132,7 @@ then
         tnl_5_timer_missed_actinon_value.postUpdate((tnl_5_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_5_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_5_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_5_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_5_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g5_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -141,7 +151,7 @@ then
         tnl_6_timer_missed_actinon_value.postUpdate((tnl_6_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_6_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_6_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_6_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_6_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g6_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -160,7 +170,7 @@ then
         tnl_7_timer_missed_actinon_value.postUpdate((tnl_7_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_7_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_7_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_7_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_7_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g7_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -179,7 +189,7 @@ then
         tnl_8_timer_missed_actinon_value.postUpdate((tnl_8_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_8_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_8_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_8_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_8_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g8_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -198,7 +208,7 @@ then
         tnl_9_timer_missed_actinon_value.postUpdate((tnl_9_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_9_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_9_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_9_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_9_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g9_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -217,7 +227,7 @@ then
         tnl_10_timer_missed_actinon_value.postUpdate((tnl_10_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_10_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_10_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_10_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_10_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g10_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -236,7 +246,7 @@ then
         tnl_11_timer_missed_actinon_value.postUpdate((tnl_11_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_11_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_11_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_11_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_11_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g11_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -255,7 +265,7 @@ then
         tnl_12_timer_missed_actinon_value.postUpdate((tnl_12_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_12_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_12_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_12_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_12_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g12_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -274,7 +284,7 @@ then
         tnl_13_timer_missed_actinon_value.postUpdate((tnl_13_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_13_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_13_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_13_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_13_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g13_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -293,7 +303,7 @@ then
         tnl_14_timer_missed_actinon_value.postUpdate((tnl_14_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_14_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_14_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_14_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_14_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g14_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -312,7 +322,7 @@ then
         tnl_15_timer_missed_actinon_value.postUpdate((tnl_15_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_15_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_15_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_15_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_15_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g15_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -331,7 +341,7 @@ then
         tnl_16_timer_missed_actinon_value.postUpdate((tnl_16_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_16_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_16_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_16_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_16_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g16_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -350,7 +360,7 @@ then
         tnl_17_timer_missed_actinon_value.postUpdate((tnl_17_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_17_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_17_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_17_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_17_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g17_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
@@ -369,7 +379,7 @@ then
         tnl_18_timer_missed_actinon_value.postUpdate((tnl_18_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
-        if(tnl_18_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
+        if(tnl_18_current_timer_value.state <= 0 ){   // If tunnel timer expired
             tnl_18_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_18_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g18_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
