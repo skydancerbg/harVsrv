@@ -35,21 +35,21 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
         tnl_51_timer_missed_actinon_value.postUpdate((tnl_51_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
     }
+
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 //  //  //  //  //  TUNNEL tnl_1   //  //  //  //  //  //  //  //
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
     if(tnl_1_btnctrl_enable.state == ON) {
 // logInfo("btn_controll.rules", "Before decrement tnl_1_ TIMER: {}", tnl_1_current_timer_value.state)
         tnl_1_current_timer_value.postUpdate((tnl_1_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
-
 // logInfo("default.rules", "1st Item: {}, 2nd Item: {}, 3rd Item: {}", Item1.state, Item2.state, Item3.state)
 // logInfo("btn_controll.rules", "After decrementtnl tnl_1_ TIMER: {}", tnl_1_current_timer_value.state)
         if(tnl_1_missed_action_countdown_enable_sw.state == ON){
+        tnl_1_timer_missed_actinon_value.postUpdate((tnl_1_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
 
         // if(tnl_1_current_timer_value.state as DecimalType == 0 || tnl_1_current_timer_value.state as DecimalType == 1.0 || tnl_1_current_timer_value.state as DecimalType < 0 ){ 
         if(tnl_1_current_timer_value.state <= 0  ){ 
-        tnl_1_displayCurrentTimerValue.postUpdate(0)
   // If tunnel timer expired
 // logInfo("btn_controll.rules", "tnl_1_ in tnl_1_current_timer_value==0 IMER: {}", tnl_1_current_timer_value.state)
             tnl_1_btnaction_enable.sendCommand(ON) // Enable button press
@@ -57,8 +57,6 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             g1_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g1_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
 // logInfo("Rule: Decrement timers", "tnl_1 Timer expired !!!")
-        }else{
-            tnl_1_displayCurrentTimerValue.postUpdate(tnl_1_current_timer_value.state as DecimalType)
         }
     }
 
@@ -75,15 +73,12 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
 
         // if(tnl_2_current_timer_value.state as DecimalType == 0 || tnl_2_current_timer_value.state as DecimalType == 1 ){   // If tunnel timer expired
         if(tnl_2_current_timer_value.state <= 0 ){   // If tunnel timer expired
-           tnl_2_displayCurrentTimerValue.postUpdate(0)
 // logInfo("btn_controll.rules", "tnl_2_current_timer_value==0 IMER: {}", tnl_1_current_timer_value.state)
             tnl_2_btnaction_enable.sendCommand(ON) // Enable button press
             tnl_2_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g2_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g2_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
 // logInfo("Rule: Decrement timers", "tnl_2 Timer expired !!!")
-        }else{
-            tnl_2_displayCurrentTimerValue.postUpdate(tnl_2_current_timer_value.state as DecimalType)
         }
     }
 
@@ -103,11 +98,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_3_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g3_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g3_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_3_displayCurrentTimerValue.postUpdate(0)
-
 // logInfo("Rule: Decrement timers", "tnl_3 Timer expired !!!")
-        }else{
-            tnl_3_displayCurrentTimerValue.postUpdate(tnl_3_current_timer_value.state as DecimalType)
         }
     }
 
@@ -127,10 +118,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_4_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g4_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g4_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_4_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_4 Timer expired !!!")
-        }else{
-            tnl_4_displayCurrentTimerValue.postUpdate(tnl_4_current_timer_value.state as DecimalType)
         }
     }
 
@@ -139,6 +127,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  // 
     if(tnl_5_btnctrl_enable.state == ON) {
         tnl_5_current_timer_value.postUpdate((tnl_5_current_timer_value.state as DecimalType) - 1)  // Decrement tunnel timer
+
         if(tnl_5_missed_action_countdown_enable_sw.state == ON){
         tnl_5_timer_missed_actinon_value.postUpdate((tnl_5_timer_missed_actinon_value.state as DecimalType) - 1) // Increment missed action timer
         }
@@ -148,10 +137,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_5_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g5_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g5_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_5_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_5 Timer expired !!!")
-        }else{
-            tnl_5_displayCurrentTimerValue.postUpdate(tnl_5_current_timer_value.state as DecimalType)
         }
     }
 
@@ -170,10 +156,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_6_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g6_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g6_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_6_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_6 Timer expired !!!")
-        }else{
-        tnl_6_displayCurrentTimerValue.postUpdate(tnl_6_current_timer_value.state as DecimalType)
         }
     }
 
@@ -192,10 +175,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_7_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g7_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g7_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_7_displayCurrentTimerValue.postUpdate(0)
-        // logInfo("Rule: ", "tnl_7 Shold post 0 !!!")
-        }else{
-        tnl_7_displayCurrentTimerValue.postUpdate(tnl_7_current_timer_value.state as DecimalType)
+// logInfo("Rule: Decrement timers", "tnl_7 Timer expired !!!")
         }
     }
 
@@ -214,10 +194,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_8_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g8_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g8_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_8_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_8 Timer expired !!!")
-        }else{
-            tnl_8_displayCurrentTimerValue.postUpdate(tnl_8_current_timer_value.state as DecimalType)
         }
     }
 
@@ -236,10 +213,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_9_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g9_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g9_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_9_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_9 Timer expired !!!")
-        }else{
-            tnl_9_displayCurrentTimerValue.postUpdate(tnl_9_current_timer_value.state as DecimalType)
         }
     }
 
@@ -258,10 +232,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_10_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g10_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g10_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_10_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_10 Timer expired !!!")
-        }else{
-            tnl_10_displayCurrentTimerValue.postUpdate(tnl_10_current_timer_value.state as DecimalType)
         }
     }
 
@@ -280,10 +251,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_11_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g11_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g11_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_11_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_11 Timer expired !!!")
-        }else{
-            tnl_11_displayCurrentTimerValue.postUpdate(tnl_11_current_timer_value.state as DecimalType)
         }
     }
 
@@ -302,10 +270,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_12_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g12_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g12_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_12_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_12 Timer expired !!!")
-        }else{
-            tnl_12_displayCurrentTimerValue.postUpdate(tnl_12_current_timer_value.state as DecimalType)
         }
     }
 
@@ -324,10 +289,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_13_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g13_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g13_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_13_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_13 Timer expired !!!")
-        }else{
-            tnl_13_displayCurrentTimerValue.postUpdate(tnl_13_current_timer_value.state as DecimalType)
         }
     }
 
@@ -346,10 +308,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_14_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g14_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g14_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_14_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_14 Timer expired !!!")
-        }else{
-            tnl_14_displayCurrentTimerValue.postUpdate(tnl_14_current_timer_value.state as DecimalType)
         }
     }
 
@@ -368,10 +327,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_15_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g15_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g15_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_15_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_15 Timer expired !!!")
-        }else{
-            tnl_15_displayCurrentTimerValue.postUpdate(tnl_15_current_timer_value.state as DecimalType)
         }
     }
 
@@ -390,10 +346,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_16_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g16_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g16_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_16_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_16 Timer expired !!!")
-        }else{
-            tnl_16_displayCurrentTimerValue.postUpdate(tnl_16_current_timer_value.state as DecimalType)
         }
     }
 
@@ -412,10 +365,7 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_17_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g17_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g17_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_17_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_17 Timer expired !!!")
-        }else{
-            tnl_17_displayCurrentTimerValue.postUpdate(tnl_17_current_timer_value.state as DecimalType)
         }
     }
 
@@ -434,13 +384,9 @@ logInfo("btn_controll.rules", "TIMER TICK DECREMENT")
             tnl_18_missed_action_countdown_enable_sw.sendCommand(ON)  // Enable Missed actioncoountdown timer
             g18_btn_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Button LED's on both sides
             g18_tnl_lights.allMembers.forEach [ item | item.sendCommand(ON) ]  // Light the Tunnel Lights on both sides
-            tnl_18_displayCurrentTimerValue.postUpdate(0)
 // logInfo("Rule: Decrement timers", "tnl_18 Timer expired !!!")
-        }else{
-            tnl_18_displayCurrentTimerValue.postUpdate(tnl_18_current_timer_value.state as DecimalType)
         }
     }
 
 
 end
-

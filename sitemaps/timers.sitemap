@@ -119,8 +119,8 @@ sitemap timers label="ТАЙМЕРИ" {
             Setpoint item=tnl_7_timer_default_value   labelcolor=["green"]             label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
             Setpoint item=tnl_7_timer_extendedDryingTime_value   labelcolor=["green"]  label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
             Text item=none                  
-            Switch item=tnl_7_resetTimer_sw   label="RESET Tunnel 7"
-            Text item=none    
+            // Switch item=tnl_7_resetTimer_sw   label="RESET Tunnel 7"
+            // Text item=none    
 
             Text item=none   labelcolor=["orange"]     label="TUNNEL 8"             
             Text item=none

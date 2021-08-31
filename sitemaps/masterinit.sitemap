@@ -17,13 +17,13 @@ sitemap masterinit label="МАСТЕР ДЕФОЛТ" {
 // Иване разкарай тоя сетинг от индивидуалните тунели. Да се ползва само глобалния  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!            
             // REMOVE tnis setting for individual tunnels
             // Setpoint item=tnl_51_timer_missed_actinon_value     label="Тунел 51 - Таймер пропуснато действие[%d минути]" icon="time" minValue=1 maxValue=1440 step=1                                    
-            Text item=none                  
-            Text item=none        
-            Switch item=tnl_51_set_all_to_defaults_sw  label="Tunnel tnl_51 - Set values to default"
-            Text item=none                  
-            Text item=none  
-            Text item=none
-            Switch item=tnl_51_btnctrl_enable  label="Tunnel tnl_51 - POWER"                         
+            // Text item=none                  
+            // Text item=none        
+            // Switch item=tnl_51_set_all_to_defaults_sw  label="Tunnel tnl_51 - Set values to default"
+            // Text item=none                  
+            // Text item=none  
+            // Text item=none
+            // Switch item=tnl_51_btnctrl_enable  label="Tunnel tnl_51 - POWER"                         
             Text item=none                  
             Text item=none        
             Switch item=tnl_1_set_all_to_defaults_sw  label="Tunnel tnl_1 - Set values to default"
