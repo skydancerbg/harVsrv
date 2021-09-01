@@ -1,7 +1,7 @@
 //divide-number-when-displaying-in-sitemap
 // https://community.openhab.org/t/divide-number-when-displaying-in-sitemap/36577
 
-sitemap T_Rh label="УЕСТ АГРО ГРУП ЕООД" {
+sitemap current_T_Rh label="УЕСТ АГРО ГРУП ЕООД" {
 
         // Frame label="ДАТА/ЧАС:" {
         //     Text item=Date //label="Livingroom"
