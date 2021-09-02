@@ -15,21 +15,38 @@ sitemap dev label="Development test page" {
             Setpoint item=default_tnl_timer_missed_actinon_value        label="Глобално: Таймер аларма при бездействие [%d минути]" icon="time" minValue=1 maxValue=1440 step=1
             Setpoint item=default_tnl_timer_extendedDryingTime_value    label="Глобално: Допълнително време за сушене  [%d минути]" icon="time" minValue=1 maxValue=1440 step=1    
             Text item=none
-// Иване разкарай тоя сетинг от индивидуалните тунели. Да се ползва само глобалния  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!            
             // REMOVE tnis setting for individual tunnels
             // Setpoint item=tnl_51_timer_missed_actinon_value     label="Тунел 51 - Таймер пропуснато действие[%d минути]" icon="time" minValue=1 maxValue=1440 step=1                                    
-            Text item=none                  
-            Text item=none        
-            Switch item=tnl_51_set_all_to_defaults_sw  label="Tunnel 51 - Set values to default"
-            Text item=none                  
-            Text item=none  
-            Text item=none
-            Switch item=tnl_51_btnctrl_enable  label="Tunnel 51 - POWER"                         
-            Text item=none                  
+            // Text item=none                  
+            // Text item=none        
+            // Switch item=tnl_51_set_all_to_defaults_sw  label="Tunnel 51 - Set values to default"
+            // Text item=none                  
+            // Text item=none  
+            // Text item=none
+            // Switch item=tnl_51_btnctrl_enable  label="Tunnel 51 - POWER"                         
+            // Text item=none                  
              
 }
 
         Frame label="ТАЙМЕРИ" {
+
+
+            Text item=none   labelcolor=["blue"]     label="TUNNEL 8"             
+            Text item=none
+            Setpoint item=tnl_8_current_timer_value   labelcolor=["blue"]  valuecolor=[Last_Update=="Uninitialized"="gray",>0="green",<=0="red"] label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            Text item=none                  
+            Setpoint item=tnl_8_timer_default_value   labelcolor=["blue"]            label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
+            Setpoint item=tnl_8_timer_extendedDryingTime_value   labelcolor=["blue"] label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
+            Text item=none                  
+
+            Text item=none        label="TUNNEL 8"             
+            Text item=none
+            Setpoint item=tnl_8_current_timer_value     valuecolor=[Last_Update=="Uninitialized"="gray",>0="green",<=0="red"] label="Timer [%d минути]" icon="time" minValue=-1440 maxValue=1440 step=1                                                    
+            Text item=none                  
+            Setpoint item=tnl_8_timer_default_value               label="Normal time [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                                                  
+            Setpoint item=tnl_8_timer_extendedDryingTime_value    label="Overtime [%d min]" icon="time" minValue=1 maxValue=1440 step=1                                 
+            Text item=none                  
+
 
             // valuecolor=[Last_Update=="Uninitialized"="gray",>=25="orange",>=15="green",0="white",<15="blue"]
             Text item=none   labelcolor=["green"]      label="TUNNEL 1"             
