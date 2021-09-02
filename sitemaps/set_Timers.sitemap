@@ -4,7 +4,7 @@
 
 // http://10.50.20.100:8080/basicui/app?sitemap=dev
 
-sitemap setTimers label="ТАЙМЕРИ" {
+sitemap set_Timers label="ТАЙМЕРИ" {
 
         // Frame label="ДАТА/ЧАС:" {
         //     Text item=Date 
