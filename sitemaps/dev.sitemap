@@ -6,6 +6,8 @@ sitemap dev label="Development test page" {
 
             Switch item=globalInit       label="Global initial INIT all tunnel values!"
             Switch item=sw_init_default_tnl_warn_timer_setpoint label="Init yellow collor display below x minutes"
+            Switch item=sw_init_default_tnl_temperature_alarm_setpoint label="Init temperature alarm setpoint value"
+
             Text item=none                  
             Text item=none                  
             Switch item=enableAllTunnels label="Global ENABLE all tunnels!"
@@ -20,15 +22,34 @@ sitemap dev label="Development test page" {
             Text item=none
             Text item=none
             Setpoint item=default_tnl_warn_timer_value    label="Глобално: Оцвети дисплей в жълто при оставащи  [%d минути]" icon="time" minValue=1 maxValue=1440 step=1
+            Setpoint item=default_tnl_temperature_alarm_value    label="Глобално: Настройка аларма при висока температура  [%.1f °C]" icon="time" minValue=1 maxValue=120 step=1
             Text item=none
             Text item=none
             Text item=none
-                       Switch item=tnl_51_btnctrl_enable
+            Text item=none
+        Switch item=tnl_1_btnctrl_enable
+        Switch item=tnl_2_btnctrl_enable
+        Switch item=tnl_3_btnctrl_enable
+        Switch item=tnl_4_btnctrl_enable
+        Switch item=tnl_5_btnctrl_enable
+        Switch item=tnl_6_btnctrl_enable
+        Switch item=tnl_7_btnctrl_enable
+        Switch item=tnl_8_btnctrl_enable
+        Switch item=tnl_9_btnctrl_enable
+        Switch item=tnl_10_btnctrl_enable
+        Switch item=tnl_11_btnctrl_enable
+        Switch item=tnl_12_btnctrl_enable
+        Switch item=tnl_13_btnctrl_enable
+        Switch item=tnl_14_btnctrl_enable
+        Switch item=tnl_15_btnctrl_enable
+        Switch item=tnl_16_btnctrl_enable
+        Switch item=tnl_17_btnctrl_enable
+        Switch item=tnl_18_btnctrl_enable
+
             Text item=none
             Text item=none
-            Text item=none
-            Text item=tnl_1_current_timer_value     label="[%f.0 минути]"
-            Text item=tnl_2_current_timer_value     label="[%f минути]"
+            Text item=tnl_1_current_timer_value     label="[%.1f минути]"
+            Text item=tnl_2_current_timer_value     label="[%.1f минути]"
             Text item=tnl_3_current_timer_value     label="[%d минути]"
             Text item=tnl_4_current_timer_value     label="[%d минути]"
             Text item=tnl_5_current_timer_value     label="[%d минути]"

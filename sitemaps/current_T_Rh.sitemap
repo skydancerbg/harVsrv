@@ -83,20 +83,20 @@ sitemap current_T_Rh label="ТЕМПЕРАТУРА И ВЛАЖНОСТ" {
             Text item=out_13_Humidity       labelcolor=["navy"] valuecolor=["red"]                   
             Text item= in_13_Humidity       labelcolor=["navy"] valuecolor=["blue"]   icon=""        
 
-            Text item= in_14_Temperature    labelcolor=["orange"] valuecolor=["red"]                       
-            Text item=out_14_Temperature    labelcolor=["orange"] valuecolor=["blue"]  icon=""             
-            Text item= in_14_Humidity       labelcolor=["orange"] valuecolor=["red"]                  
-            Text item=out_14_Humidity       labelcolor=["orange"] valuecolor=["blue"]  icon=""        
+            Text item=out_14_Temperature    labelcolor=["orange"] valuecolor=["red"]               
+            Text item= in_14_Temperature    labelcolor=["orange"] valuecolor=["blue"] icon=""                      
+            Text item=out_14_Humidity       labelcolor=["orange"] valuecolor=["red"]          
+            Text item= in_14_Humidity       labelcolor=["orange"] valuecolor=["blue"] icon=""                
 
             Text item=out_15_Temperature    labelcolor=["navy"] valuecolor=["red"]                        
             Text item= in_15_Temperature    labelcolor=["navy"] valuecolor=["blue"]   icon=""             
             Text item=out_15_Humidity       labelcolor=["navy"] valuecolor=["red"]                   
             Text item= in_15_Humidity       labelcolor=["navy"] valuecolor=["blue"]   icon=""        
 
-            Text item= in_16_Temperature    labelcolor=["orange"] valuecolor=["red"]                        
-            Text item=out_16_Temperature    labelcolor=["orange"] valuecolor=["blue"]  icon=""              
-            Text item= in_16_Humidity       labelcolor=["orange"] valuecolor=["red"]                   
-            Text item=out_16_Humidity       labelcolor=["orange"] valuecolor=["blue"]  icon=""         
+            Text item=out_16_Temperature    labelcolor=["orange"] valuecolor=["red"]                
+            Text item= in_16_Temperature    labelcolor=["orange"] valuecolor=["blue"]  icon=""                      
+            Text item=out_16_Humidity       labelcolor=["orange"] valuecolor=["red"]           
+            Text item= in_16_Humidity       labelcolor=["orange"] valuecolor=["blue"]   icon=""                
 
             Text item=out_17_Temperature    labelcolor=["navy"] valuecolor=["red"]                         
             Text item= in_17_Temperature    labelcolor=["navy"] valuecolor=["blue"]   icon=""              
