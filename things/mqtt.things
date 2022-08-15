@@ -467,8 +467,7 @@ Bridge mqtt:broker:localMQTTbroker "localMQTTbroker" [ host="127.0.0.1", port=18
         Type number : rssi          "WiFi Signal Strength"  [ stateTopic="tele/out_18/STATE",  transformationPattern="JSONPATH:$.Wifi.RSSI"]
         // Type number : dewpoint      "Dew point"             [ stateTopic="tele/in_2/SENSOR", transformationPattern="JSONPATH:$.SHT3X.DewPoint" ]        
     }
-
-// //      TEST TUNNEL OUT     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //      TEST TUNNEL OUT     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     Thing topic out_51 "out 51" @ "tunnel_in" {
     Channels:
         Type switch : button        "Button"                [ stateTopic="stat/out_51/POWER3", commandTopic="cmnd/out_51/POWER3" ]
@@ -480,6 +479,125 @@ Bridge mqtt:broker:localMQTTbroker "localMQTTbroker" [ host="127.0.0.1", port=18
         Type number : rssi          "WiFi Signal Strength"  [ stateTopic="tele/out_51/STATE",  transformationPattern="JSONPATH:$.Wifi.RSSI"]
         // Type number : dewpoint      "Dew point"             [ stateTopic="tele/in_2/SENSOR", transformationPattern="JSONPATH:$.SHT3X.DewPoint" ]        
     }
-// //      TEST TUNNEL OUT     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//     END  TEST TUNNEL OUT     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+// ##########################################################################
+//* ###################  FLAP LINEAR ACUATOR CONTROLLERS ####################
+// ##########################################################################
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Thing topic flap_actuator_1 "flap_actuator_1" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_1/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_1/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_1/LWT" ]
+    }
+    Thing topic flap_actuator_2 "flap_actuator_2" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_2/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_2/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_2/LWT" ]
+    }
+    Thing topic flap_actuator_3 "flap_actuator_3" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_3/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_3/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_3/LWT" ]
+    }
+    Thing topic flap_actuator_4 "flap_actuator_4" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_4/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_4/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_4/LWT" ]
+    }
+    Thing topic flap_actuator_5 "flap_actuator_5" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_5/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_5/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_5/LWT" ]
+    }
+    Thing topic flap_actuator_6 "flap_actuator_6" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_6/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_6/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_6/LWT" ]
+    }
+    Thing topic flap_actuator_7 "flap_actuator_7" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_7/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_7/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_7/LWT" ]
+    }
+    Thing topic flap_actuator_8 "flap_actuator_8" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_8/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_8/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_8/LWT" ]
+    }
+    Thing topic flap_actuator_9 "flap_actuator_9" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_9/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_9/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_9/LWT" ]
+    }
+    Thing topic flap_actuator_10 "flap_actuator_10" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_10/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_10/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_10/LWT" ]
+    }
+    Thing topic flap_actuator_11 "flap_actuator_11" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_11/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_11/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_11/LWT" ]
+    }
+    Thing topic flap_actuator_12 "flap_actuator_12" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_12/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_12/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_12/LWT" ]
+    }
+    Thing topic flap_actuator_13 "flap_actuator_13" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_13/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_13/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_13/LWT" ]
+    }
+    Thing topic flap_actuator_14 "flap_actuator_14" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_14/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_14/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_14/LWT" ]
+    }
+    Thing topic flap_actuator_15 "flap_actuator_15" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_15/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_15/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_15/LWT" ]
+    }
+    Thing topic flap_actuator_16 "flap_actuator_16" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_16/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_16/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_16/LWT" ]
+    }
+    Thing topic flap_actuator_17 "flap_actuator_17" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_17/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_17/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_17/LWT" ]
+    }
+    Thing topic flap_actuator_18 "flap_actuator_18" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_18/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_18/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_18/LWT" ]
+    }
+
+
 
 }
