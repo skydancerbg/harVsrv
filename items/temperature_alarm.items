@@ -1,6 +1,7 @@
 Switch  tnl1_temperature_alarm
 Switch  tnl2_temperature_alarm
 Switch  tnl3_temperature_alarm
+Switch  tnl4_temperature_alarm
 // Switch  tnl3_temperature_alarm
 Switch  tnl5_temperature_alarm
 Switch  tnl6_temperature_alarm

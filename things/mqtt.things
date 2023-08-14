@@ -597,7 +597,10 @@ Bridge mqtt:broker:localMQTTbroker "localMQTTbroker" [ host="127.0.0.1", port=18
         Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_18/CURRENT_POSITION"]
         Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_18/LWT" ]
     }
-
-
-
+    Thing topic flap_actuator_19 "flap_actuator_19" @ "Tunnels" {
+    Channels:
+        Type number : target_position   "Set position"           [   commandTopic= "cmnd/flap_actuator_19/TARGET_POSITION" ]
+        Type number : current_position  "Current position"       [      stateTopic="stat/flap_actuator_19/CURRENT_POSITION"]
+        Type string : reachable         "Reachable"              [      stateTopic="tele/flap_actuator_19/LWT" ]
+    }
 }

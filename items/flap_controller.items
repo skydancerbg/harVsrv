@@ -40,3 +40,5 @@ Number FlapActuator_17_Target  "Flap 17 target position [%d] mm"  (gPersist_On_C
 Number FlapActuator_17_Current "Flap 17 current position [%d] mm" (gPersist_On_Change_1minute)    { channel="mqtt:topic:localMQTTbroker:flap_actuator_17:current_position" } 
 Number FlapActuator_18_Target  "Flap 18 target position [%d] mm"  (gPersist_On_Change_1minute)    { channel="mqtt:topic:localMQTTbroker:flap_actuator_18:target_position" } 
 Number FlapActuator_18_Current "Flap 18 current position [%d] mm" (gPersist_On_Change_1minute)    { channel="mqtt:topic:localMQTTbroker:flap_actuator_18:current_position" } 
+Number FlapActuator_19_Target  "Flap 19 target position [%d] mm"  (gPersist_On_Change_1minute)    { channel="mqtt:topic:localMQTTbroker:flap_actuator_19:target_position" } 
+Number FlapActuator_19_Current "Flap 19 current position [%d] mm" (gPersist_On_Change_1minute)    { channel="mqtt:topic:localMQTTbroker:flap_actuator_19:current_position" } 
